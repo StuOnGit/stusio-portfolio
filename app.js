@@ -48,18 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const angle = Math.atan2(dy, dx);
                 segment.x = previousX - Math.cos(angle) * segmentSize;
                 segment.y = previousY - Math.sin(angle) * segmentSize;
-            }else if (Date.now() - lastMouseMoveTime > 300) {
-                const head = segments[0];
-                const angleToHead = Math.atan2(head.y - segment.y, head.x - segment.x);
-                if (index != 0) {
-                    segment.x += Math.cos(angleToHead) * segmentSize / 2;
-                    segment.y += Math.sin(angleToHead) * segmentSize / 2;
-                    segment.element.style.opacity = 0;
-                }
-            }else {
-                if (index != 0){
-                    segment.element.style.opacity = 1;
-                }
             }
 
             segment.element.style.transform = `translate(${segment.x}px, ${segment.y}px)`;
@@ -72,8 +60,29 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animateSnake);
     }
 
-   
-   
-    // Avvia l'animazione
+    function checkMouseMove() {
+        if (Date.now() - lastMouseMoveTime > 100) {
+            // Raccolta del serpente
+            let previousX = mouseX;
+            let previousY = mouseY;
+
+            segments.forEach((segment, index) => {
+                const dx = previousX - segment.x;
+                const dy = previousY - segment.y;
+                const angle = Math.atan2(dy, dx);
+
+                segment.x = previousX;
+                segment.y = previousY;
+
+                segment.element.style.transform = `translate(${segment.x}px, ${segment.y}px)`;
+
+                previousX = segment.x;
+                previousY = segment.y;
+            });
+        }
+    }
+    
     animateSnake();
+    setInterval(checkMouseMove, 100);
+  
 });

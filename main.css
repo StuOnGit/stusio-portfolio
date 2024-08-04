@@ -32,7 +32,7 @@ body {
     position: absolute;
     border-radius: 50%;
     pointer-events: none; /* Impedisce l'interazione con i segmenti del serpente */
-    transition: transform 0.1s ease, opacity 0.5s ease;
+    transition: transform 0.2s ease, opacity 0.5s ease;
 /*     transition: width 0.3s, height 0.3s, opacity 0.5s ease; /* Transizione per la riduzione della dimensione */
 }
 
