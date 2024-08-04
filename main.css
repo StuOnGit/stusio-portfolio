@@ -1,0 +1,123 @@
+html, body {
+   cursor: handr;
+}
+
+body {
+    background-color: #3d3d3d;
+    color: whitesmoke;
+    width: 100%;
+    height: 100vh;
+    font-family: monospace;
+    font-size: large;
+    line-height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#snake-container {
+    position: fixed; /* Cambiato da relative a fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000; /* Assicura che il serpente sia sopra tutti gli altri elementi */
+}
+
+.snake-segment {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none; /* Impedisce l'interazione con i segmenti del serpente */
+    transition: transform 0.1s ease, opacity 0.5s ease;
+/*     transition: width 0.3s, height 0.3s, opacity 0.5s ease; /* Transizione per la riduzione della dimensione */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+}
+.github {
+  padding-right: 1vh;
+}
+
+
+header ul {
+
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+}
+
+footer {
+    text-align: right;
+    margin-top: 3rem;
+}
+ul {
+    padding-left: 40px;
+}
+
+.whole-container {
+    display: block;
+    width: 100%;
+    padding: 1.5em;
+    height: auto;
+    background-color: #6D8665;
+    max-width: 1200px;
+    border: 5px solid #0b2007;
+    border-radius: 2rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-height: fit-content;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 0.9em;
+}
+
+a { 
+    color: aliceblue;
+}
+
+a:visited {
+    color: lightgrey;
+}
+
+a:hover, active {
+    color: #eee;
+}
+
+a.link {
+    cursor: none;
+}
+
+.page {
+    width: 100%;
+}
