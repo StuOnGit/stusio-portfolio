@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
+
+    if (isMobile) {
+        // Nasconde il contenitore del serpente su dispositivi mobili
+        const snakeContainer = document.getElementById('snake-container');
+        snakeContainer.style.display = 'none';
+        return; // Esce dalla funzione se è un dispositivo mobile
+    }
+
     const snakeContainer = document.getElementById('snake-container');
     const segments = [];
     const segmentCount = 10;
