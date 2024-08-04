@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
         // Nasconde il contenitore del serpente su dispositivi mobili

@@ -36,11 +36,6 @@ body {
 /*     transition: width 0.3s, height 0.3s, opacity 0.5s ease; /* Transizione per la riduzione della dimensione */
 }
 
-@media (max-width: 768px) {
-    #snake-container {
-        display: none;
-    }
-}
 
 * {
     margin: 0;
