@@ -28,7 +28,7 @@ body {
 .snake-segment {
     width: 20px;
     height: 20px;
-    background-color: green;
+    background-color: rgb(61, 87, 61);
     position: absolute;
     border-radius: 50%;
     pointer-events: none; /* Impedisce l'interazione con i segmenti del serpente */
